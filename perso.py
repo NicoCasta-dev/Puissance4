@@ -22,6 +22,16 @@ def tableau_vide(ligne, colonne, colonne_actuelle, tour):
 
 colonne_actuelle = 0
 
+# def valider_coup(ligne, colonne, colonne_actuelle, tour):
+
+#     for c in range(colonne):
+#         if tour % 2 == 0:
+#             print('🟡', end=' ')
+#         else:
+#             print('🟡', -1)
+            
+
+
 while True:
     tableau_vide(ligne, colonne, colonne_actuelle, tour)
     
@@ -33,4 +43,10 @@ while True:
 
     elif mouvement == 'd' and colonne_actuelle < colonne - 1:
         colonne_actuelle += 1
-        
+
+# while True :
+# def valider_coup(ligne, colonne, colonne_actuelle, tour)
+    
+#     valider = input("Appuyez sur 's' pour valider votre coup ")
+
+#     if valider == "s" :
