@@ -27,9 +27,9 @@ def placer_pion(col, joueur):
 
 def jouer():
     while True:
-        col = input("joueur 1, dans quelle colonne voulez-vous placer votre pion?")
+        col = int(input("joueur 1, dans quelle colonne voulez-vous placer votre pion?"))
         placer_pion(col, joueur1)
-        col = input("joueur 2, dans quelle colonne voulez-vous placer votre pion?")
+        col = int(input("joueur 2, dans quelle colonne voulez-vous placer votre pion?"))
         placer_pion(col, joueur2)
 
 afficher_grille()
