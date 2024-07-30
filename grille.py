@@ -1,3 +1,4 @@
+import os
 hauteur =6
 largeur = 7
 joueur1 ="❌"
@@ -14,27 +15,37 @@ def afficher_grille():
 
 
 def placer_pion(col, joueur):
-    
+    global termine
     
     for h in range(hauteur-1, -1, -1):
         if plateau[h][col] == '🔘':
             plateau[h][col] = joueur
+            
+            if ((h<=2 and plateau[h][col] == joueur1) and (plateau[h+1][col] == plateau[h+2][col] == plateau[h+3][col] == joueur1)) or ((col<=3 and plateau[h][col] == joueur1 ) and (plateau[h][col+1] == plateau[h][col+2] == plateau[h][col+3] == joueur1)) or ((h<=2 and col<=3 and plateau[h][col] == joueur1) and (plateau[h+1][col+1] == plateau[h+2][col+2] == plateau[h+3][col+3] == joueur1)) or ((h<=2 and col>=3 and plateau[h][col] == joueur1) and (plateau[h+1][col-1] == plateau[h+2][col-2] == plateau[h+3][col-3] == joueur1)):
+                print("Puissance 4! La victoire revient au joueur 1!")
+                termine = True
+
+            elif ((h<=2 and plateau[h][col] == joueur2) and (plateau[h+1][col] == plateau[h+2][col] == plateau[h+3][col] == joueur2)) or ((col<=3 and plateau[h][col] == joueur2 ) and (plateau[h][col+1] == plateau[h][col+2] == plateau[h][col+3] == joueur2)) or ((h<=2 and col<=3 and plateau[h][col] == joueur2) and (plateau[h+1][col+1] == plateau[h+2][col+2] == plateau[h+3][col+3] == joueur2)) or ((h<=2 and col>=3 and plateau[h][col] == joueur2) and (plateau[h+1][col-1] == plateau[h+2][col-2] == plateau[h+3][col-3] == joueur2)):
+            
+                print("Puissance 4! La victoire revient au joueur 2!")
+                termine = True
             break
+    os.system('cls')
     afficher_grille()
                 
 
 
-def victoire():
-    global termine
-    for h in range(hauteur):
-        for l in range(largeur):
-            if ((h<=2 and plateau[h][l] == joueur1) and (plateau[h+1][l] == plateau[h+2][l] == plateau[h+3][l] == joueur1)) or ((l<=3 and plateau[h][l] == joueur1 ) and (plateau[h][l+1] == plateau[h][l+2] == plateau[h][l+3] == joueur1)) or ((h<=2 and l<=3 and plateau[h][l] == joueur1) and (plateau[h+1][l+1] == plateau[h+2][l+2] == plateau[h+3][l+3] == joueur1)) or ((h<=2 and l>=3 and plateau[h][l] == joueur1) and (plateau[h+1][l-1] == plateau[h+2][l-2] == plateau[h+3][l-3] == joueur1)):
-                print("Puissance 4! La victoire revient au joueur 1!")
-                termine = True
+# def victoire():
+#     global termine
+#     for h in range(hauteur):
+#         for l in range(largeur):
+#             if ((h<=2 and plateau[h][l] == joueur1) and (plateau[h+1][l] == plateau[h+2][l] == plateau[h+3][l] == joueur1)) or ((l<=3 and plateau[h][l] == joueur1 ) and (plateau[h][l+1] == plateau[h][l+2] == plateau[h][l+3] == joueur1)) or ((h<=2 and l<=3 and plateau[h][l] == joueur1) and (plateau[h+1][l+1] == plateau[h+2][l+2] == plateau[h+3][l+3] == joueur1)) or ((h<=2 and l>=3 and plateau[h][l] == joueur1) and (plateau[h+1][l-1] == plateau[h+2][l-2] == plateau[h+3][l-3] == joueur1)):
+#                 print("Puissance 4! La victoire revient au joueur 1!")
+#                 termine = True
 
-            elif ((h<=2 and plateau[h][l] == joueur2) and (plateau[h+1][l] == plateau[h+2][l] == plateau[h+3][l] == joueur2)) or ((l<=3 and plateau[h][l] == joueur2 ) and (plateau[h][l+1] == plateau[h][l+2] == plateau[h][l+3] == joueur2)) or ((h<=2 and l<=3 and plateau[h][l] == joueur2) and (plateau[h+1][l+1] == plateau[h+2][l+2] == plateau[h+3][l+3] == joueur2)) or ((h<=2 and l>=3 and plateau[h][l] == joueur2) and (plateau[h+1][l-1] == plateau[h+2][l-2] == plateau[h+3][l-3] == joueur2)):
-                print("Puissance 4! La victoire revient au joueur 2!")
-                termine = True
+#             elif ((h<=2 and plateau[h][l] == joueur2) and (plateau[h+1][l] == plateau[h+2][l] == plateau[h+3][l] == joueur2)) or ((l<=3 and plateau[h][l] == joueur2 ) and (plateau[h][l+1] == plateau[h][l+2] == plateau[h][l+3] == joueur2)) or ((h<=2 and l<=3 and plateau[h][l] == joueur2) and (plateau[h+1][l+1] == plateau[h+2][l+2] == plateau[h+3][l+3] == joueur2)) or ((h<=2 and l>=3 and plateau[h][l] == joueur2) and (plateau[h+1][l-1] == plateau[h+2][l-2] == plateau[h+3][l-3] == joueur2)):
+#                 print("Puissance 4! La victoire revient au joueur 2!")
+#                 termine = True
     
 
 
@@ -42,11 +53,19 @@ def jouer():
     while termine == False:
         col = int(input("joueur 1, dans quelle colonne voulez-vous placer votre pion?"))
         placer_pion(col, joueur1)
-        victoire()
+        
         if termine == True:
+<<<<<<< HEAD
             col = int(input("joueur 2, dans quelle colonne voulez-vous placer votre pion?"))
             placer_pion(col, joueur2)
             victoire()
+=======
+            break
+        col = int(input("joueur 2, dans quelle colonne voulez-vous placer votre pion?"))
+        placer_pion(col, joueur2)
+        
+        
+>>>>>>> 00e5a341f9839ea9265809a84671f782795a9638
 
 
 
