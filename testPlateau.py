@@ -14,9 +14,9 @@ def afficherGrille (grille):
         print("")
 
 def placementDansGrille(col, joueur, grille):
-    for i in range(6):
-        if grille[col][i] == 0:
-            grille[col][i] = joueur
+    for i in range(5, 0, -1):
+        if grille[i][col] == 0:
+            grille[i][col] = joueur
 
 
 os.system('cls')
@@ -31,6 +31,6 @@ plateau = [
 ]
 
 plateau[0][0]= 1
-afficherGrille(plateau)
+
 placementDansGrille(6,2,plateau)
 afficherGrille(plateau)
