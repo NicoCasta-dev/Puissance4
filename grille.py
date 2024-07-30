@@ -1,3 +1,4 @@
+import os
 hauteur =6
 largeur = 7
 joueur1 ="❌"
@@ -29,6 +30,7 @@ def placer_pion(col, joueur):
                 print("Puissance 4! La victoire revient au joueur 2!")
                 termine = True
             break
+    os.system('cls')
     afficher_grille()
                 
 
