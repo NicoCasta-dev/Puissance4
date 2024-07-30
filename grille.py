@@ -43,6 +43,7 @@ def jouer():
         col = int(input("joueur 1, dans quelle colonne voulez-vous placer votre pion?"))
         placer_pion(col, joueur1)
         victoire()
+        if termine == True:
         col = int(input("joueur 2, dans quelle colonne voulez-vous placer votre pion?"))
         placer_pion(col, joueur2)
         victoire()
