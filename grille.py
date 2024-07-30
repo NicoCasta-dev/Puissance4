@@ -15,14 +15,11 @@ def afficher_grille():
 def placer_pion(col, joueur):
     
     
-    for h in range(hauteur):
-        for l in range(largeur):
-            if plateau[h][col] == '🔘' and ((plateau[h-1][col] != '🔘') or h == 5):
-                plateau[h][col] = joueur
-                
-
-            print((plateau[h][l]), end = "    ")
-        print("\n")
+    for h in range(hauteur-1, -1, -1):
+        if plateau[h][col] == '🔘':
+            plateau[h][col] = joueur
+            break
+    afficher_grille()
 
 
 def jouer():
