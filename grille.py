@@ -9,3 +9,4 @@ for h in range(hauteur):
     print("\n")
 
 print("test sten")
+print("test sten")
