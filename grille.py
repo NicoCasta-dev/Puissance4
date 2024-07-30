@@ -8,3 +8,5 @@ for h in range(hauteur):
         print((plateau[h][l]), end = "    ")
     print("\n")
 
+print("test sten")
+print("test sten")
